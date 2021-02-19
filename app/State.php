@@ -16,7 +16,8 @@ class State extends Model
         return $this->hasMany(City::class);
     }
 
-    public function getUserAmount(){
+    public function getUserAmount()
+    {
         //
     }
 }

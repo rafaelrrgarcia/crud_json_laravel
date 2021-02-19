@@ -21,7 +21,8 @@ class City extends Model
         return $this->belongsTo(State::class);
     }
 
-    public function getUserAmount(){
+    public function getUserAmount()
+    {
         //
     }
 }
