@@ -45,7 +45,7 @@ class CityController extends Controller
             } else {
                 throw new \Exception('City not found.');
             }
-            return json_encode(['success' => false, 'message' => 'City successfully updated']);
+            return json_encode(['success' => true, 'message' => 'City successfully updated']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }
@@ -60,7 +60,7 @@ class CityController extends Controller
             } else {
                 throw new \Exception('City not found.');
             }
-            return json_encode(['success' => false, 'message' => 'City successfully deleted']);
+            return json_encode(['success' => true, 'message' => 'City successfully deleted']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }

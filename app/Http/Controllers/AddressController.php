@@ -45,7 +45,7 @@ class AddressController extends Controller
             } else {
                 throw new \Exception('Address not found.');
             }
-            return json_encode(['success' => false, 'message' => 'Address successfully updated']);
+            return json_encode(['success' => true, 'message' => 'Address successfully updated']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }
@@ -60,7 +60,7 @@ class AddressController extends Controller
             } else {
                 throw new \Exception('Address not found.');
             }
-            return json_encode(['success' => false, 'message' => 'Address successfully deleted']);
+            return json_encode(['success' => true, 'message' => 'Address successfully deleted']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }

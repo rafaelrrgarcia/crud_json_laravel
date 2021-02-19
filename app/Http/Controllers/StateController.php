@@ -45,7 +45,7 @@ class StateController extends Controller
             } else {
                 throw new \Exception('State not found.');
             }
-            return json_encode(['success' => false, 'message' => 'State successfully updated']);
+            return json_encode(['success' => true, 'message' => 'State successfully updated']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }
@@ -60,7 +60,7 @@ class StateController extends Controller
             } else {
                 throw new \Exception('State not found.');
             }
-            return json_encode(['success' => false, 'message' => 'State successfully deleted']);
+            return json_encode(['success' => true, 'message' => 'State successfully deleted']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }

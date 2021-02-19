@@ -66,7 +66,7 @@ class UserController extends Controller
             } else {
                 throw new \Exception('User not found.');
             }
-            return json_encode(['success' => false, 'message' => 'User successfully updated']);
+            return json_encode(['success' => true, 'message' => 'User successfully updated']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }
@@ -81,7 +81,7 @@ class UserController extends Controller
             } else {
                 throw new \Exception('User not found.');
             }
-            return json_encode(['success' => false, 'message' => 'User successfully deleted']);
+            return json_encode(['success' => true, 'message' => 'User successfully deleted']);
         } catch (\Exception $e) {
             return json_encode(['success' => false, 'message' => $e->getMessage()]);
         }
