@@ -39,6 +39,7 @@ class UserController extends Controller
         try {
             $user = User::find($request->id);
             if ($user != null) {
+                $user->address_id = $request->address_id;
                 $user->name = $request->name;
                 $user->save();
             } else {
