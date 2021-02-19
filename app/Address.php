@@ -11,6 +11,15 @@ class Address extends Model
         'address'
     ];
 
+    protected $hidden = [
+        'addresses'
+    ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
+
     public function city()
     {
         return $this->belongsTo(City::class);

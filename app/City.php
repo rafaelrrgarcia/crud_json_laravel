@@ -11,6 +11,10 @@ class City extends Model
         'name'
     ];
 
+    protected $appends = [
+        'users_count'
+    ];
+
     public function addresses()
     {
         return $this->hasMany(Address::class);
@@ -21,8 +25,17 @@ class City extends Model
         return $this->belongsTo(State::class);
     }
 
-    public function getUserAmount()
+    public function getUsersCountAttribute()
     {
-        //
+        // Count the users
+        $userCount = 0;
+        $addresses = $this->addresses;
+        if ($addresses) {
+            for ($i = 0; $i < count($addresses); $i++) {
+                $userCount += $addresses[$i]->users->count();
+            }
+        }
+        unset($this->addresses);
+        return $userCount;
     }
 }

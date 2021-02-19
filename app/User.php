@@ -19,13 +19,6 @@ class User extends Model
     public static function createFull($request)
     {
         try {
-            // Check blank fields
-            if (!$request->name) throw new \Exception("Name not defined");
-            if (!$request->address) throw new \Exception("Address not defined");
-            if (!$request->city) throw new \Exception("City not defined");
-            if (!$request->state) throw new \Exception("State not defined");
-            if (!$request->state_uf) throw new \Exception("UF not defined");
-
             // Get a State or register a new State
             $state = State::query()->where("uf", $request->state_uf)->first();
             if (!$state) {
