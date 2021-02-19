@@ -21,6 +21,20 @@ class UserController extends Controller
         return $newUser->toJson();
     }
 
+    public function createFull(Request $request)
+    {
+        try {
+            $newUser = User::createFull($request); // Try to register a new user with full requirements. Array returned.
+            if($newUser instanceof \Exception){ // If throws an error
+                throw $newUser;
+            } else {
+                return json_encode($newUser);
+            }
+        } catch (\Exception $e) {
+            return json_encode(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
+
     public function read(Request $request)
     {
         try {

@@ -9,6 +9,7 @@ Route::get('/', function () {
 Route::prefix('users')->group(function () { // All the user routes
     Route::get('/', 'UserController@index'); // Get all the users order by name
     Route::post('/', 'UserController@create'); // Create a new user
+    Route::post('/full', 'UserController@createFull'); // Create a new user with a full form
     Route::get('/{id}', 'UserController@read'); // Read an user by id
     Route::post('/{id}', 'UserController@update'); // Update an user by id
     Route::delete('/{id}', 'UserController@delete'); // Delete an user by id
